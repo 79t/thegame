@@ -7,6 +7,7 @@ public class MyWorld extends World {
     {
 
         Mayflower.showBounds(true);
+        showText("this is the world", 350, 250, Color.BLACK);
 
     }
 
