@@ -9,7 +9,7 @@ public class TitleScreen extends World {
     }
     public void act() {
         if (Mayflower.isKeyPressed(Keyboard.KEY_P) ) {
-            World mw = new MyWorld();
+            World mw = new LevelOne();
             Mayflower.setWorld(mw);
         }
     }
