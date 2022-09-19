@@ -1,11 +1,6 @@
 import mayflower.*;
-import java.awt.MouseInfo;
 
 public class TitleScreen extends World {
-
-    Point p = MouseInfo.getPointerInfo().getLocation();
-    int x;
-    int y;
 
     public TitleScreen() {
 //        setBackground("");
@@ -14,10 +9,8 @@ public class TitleScreen extends World {
     }
     public void act() {
         if (Mayflower.isKeyPressed(Keyboard.KEY_P) ) {
-            World mw = new MyWorld();
+            World mw = new LevelOne();
             Mayflower.setWorld(mw);
         }
-        x = p.x;
-        y = p.y;
     }
 }
