@@ -2,12 +2,12 @@ import mayflower.*;
 
 public class LevelOne extends World {
 
-    public LevelOne {
+    public LevelOne() {
 
 
     }
 
-    public act() {
+    public void act() {
 
 
     }
