@@ -17,4 +17,8 @@ public class GravityActor extends Actor {
         setLocation(getX(), getY() - 1);
         return !ret;
     }
+
+
+
+
 }
