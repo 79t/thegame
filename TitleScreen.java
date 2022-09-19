@@ -1,6 +1,10 @@
 import mayflower.*;
+import java.awt.MouseInfo;
 
 public class TitleScreen extends World {
+
+    Point p = MouseInfo.getPointerInfo().getLocation();
+
     public TitleScreen() {
 //        setBackground("");
         showText("GAME", 350, 250, Color.BLACK);
@@ -11,5 +15,7 @@ public class TitleScreen extends World {
             World mw = new MyWorld();
             Mayflower.setWorld(mw);
         }
+        int x = p.x;
+        int y = p.y;
     }
 }
