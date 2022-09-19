@@ -17,6 +17,9 @@ public class GravityActor extends Actor {
             vertical_speed = 0;
         }
 
+        if (Mayflower.isKeyPressed(Keyboard.KEY_UP)) {
+            vertical_speed = 20;
+        }
     }
 
     private boolean isBlocked() {
