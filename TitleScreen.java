@@ -3,7 +3,7 @@ import mayflower.*;
 public class TitleScreen extends World {
 
     public TitleScreen() {
-//        setBackground("");
+        setBackground("assets/BG/BG.png");
         showText("GAME", 350, 250, Color.BLACK);
         showText("Press P to play", 350, 350,Color.BLACK);
     }
