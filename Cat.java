@@ -13,15 +13,15 @@ public class Cat extends MovableAnimatedActor
     {
         String[] idleImgs = new String[10];
         for (int i = 0; i < idleImgs.length; i++) {
-            idleImgs[i] = String.format("img/cat/Idle (%d).png", i + 1);
+            idleImgs[i] = String.format("assets/cat/Idle (%d).png", i + 1);
         }
         String[] walkImgs = new String[10];
         for (int i = 0; i < walkImgs.length; i++) {
-            walkImgs[i] = String.format("img/cat/Walk (%d).png", i + 1);
+            walkImgs[i] = String.format("assets/cat/Walk (%d).png", i + 1);
         }
         String[] fallImgs = new String[8];
         for (int i = 0; i < fallImgs.length; i++) {
-            fallImgs[i] = String.format("img/cat/Fall (%d).png", i + 1);
+            fallImgs[i] = String.format("assets/cat/Fall (%d).png", i + 1);
         }
 
         idleRight = new Animation(50000000, idleImgs);
