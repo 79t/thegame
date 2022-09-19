@@ -2,6 +2,7 @@ import mayflower.*;
 
 public class GravityActor extends Actor {
     final int GRAVITY = 10;
+    final int TERMINAL_VELOCITY = 300;
     int vertical_speed = 0;
     public void act() {
         if (!isBlocked() && vertical_speed < 300) {
