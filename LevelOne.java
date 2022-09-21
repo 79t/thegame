@@ -2,7 +2,7 @@ import mayflower.*;
 public class LevelOne extends World {
 
     private String[][] tiles;
-
+    private Zombie zombie;
     public LevelOne()
     {
         setBackground("assets/BG/overworldBG.png");
@@ -12,6 +12,8 @@ public class LevelOne extends World {
         Mayflower.showBounds(true);
         showText("this is the world", 350, 250, Color.BLACK);
         showText("press w to win; l to lose", 350, 350, Color.BLACK);
+        zombie = new Zombie();
+        addObject(zombie, 400, 100);
 
         tiles = new String[6][8];
         for (int i = 0; i < tiles[0].length; i++) {
