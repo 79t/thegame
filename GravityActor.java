@@ -16,6 +16,7 @@ public class GravityActor extends Actor {
                 setLocation(getX(), getY() - 1);
             }
             isJumping = false;
+            // g
         }
     }
 
