@@ -15,7 +15,8 @@ public class GravityActor extends Actor {
             while (!jumpTimer.isDone()) {
                 setLocation(getX(), getY() - 1);
             }
-            isJumping = false;
+            if (jumpTimer.isDone())
+                isJumping = false;
         }
     }
 
