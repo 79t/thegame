@@ -7,13 +7,13 @@ public class GravityActor extends Actor {
     public void act() {
         if (!isBlocked() && vertical_speed > TERMINAL_VELOCITY) {
             vertical_speed = vertical_speed + GRAVITY;
-            if (vertical_speed >= TERMINAL_VELOCITY) {
+            if (vertical_speed > TERMINAL_VELOCITY) {
                 vertical_speed = TERMINAL_VELOCITY;
             }
             setLocation(getX(), getY() + vertical_speed);
         }
         if (isBlocked()) {
-            setLocation(getX(), getY() - vertical_speed);
+            setLocation(getX(), getY() - (vertical_speed - 1) );
             vertical_speed = 0;
         }
 
