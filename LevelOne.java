@@ -11,7 +11,6 @@ public class LevelOne extends World {
         Mayflower.showBounds(true);
         showText("this is the world", 350, 250, Color.BLACK);
         showText("press w to win; l to lose", 350, 350, Color.BLACK);
-        zombie = new Zombie();
 
         tiles = new String[6][8];
         for (int i = 0; i < tiles[0].length; i++) {
