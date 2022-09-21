@@ -1,36 +1,21 @@
 import mayflower.*;
 
-public class GravityActor extends GravityTimer {
-    final double GRAVITY = 9.8;
-    final int TERMINAL_VELOCITY = 300;
-    double vertical_speed = 0;
-    private int t = 0;
+public class GravityActor extends Actor {
+    private boolean isJumping;
+    public GravityActor() {
+        boolean isJumping = false;
+    }
     public void act() {
-        //t = 0;
-        while(!isBlocked() && vertical_speed < TERMINAL_VELOCITY)
-        {
-            vertical_speed = vertical_speed + GRAVITY*((1000-g.getTimeLeft())+ t);
-            t+=1000;
-        }
+        if (!isJumping) setLocation(getX(), getY() + 1);
+        if (isBlocked()) setLocation(getX(), getY() - 1);
 
-        /*
-        int t = 0;
-        if (!isBlocked() && vertical_speed < 300) {
-            vertical_speed = vertical_speed + GRAVITY;
-            if (vertical_speed > TERMINAL_VELOCITY) {
-                vertical_speed = TERMINAL_VELOCITY;
+        if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE) && isBlocked()) {
+            isJumping = true;
+            Timer jumpTimer = new Timer(4000);
+            while (!jumpTimer.isDone()) {
+                setLocation(getX(), getY() - 1);
             }
-            setLocation(getX(), getY() + vertical_speed);
-
-         */
-
-        if (isBlocked()) {
-            setLocation(getX(), getY() - vertical_speed);
-            vertical_speed = 0;
-        }
-
-        if (Mayflower.isKeyPressed(Keyboard.KEY_UP)) {
-            vertical_speed = 20;
+            isJumping = false;
         }
     }
 
@@ -45,10 +30,4 @@ public class GravityActor extends GravityTimer {
         setLocation(getX(), getY() - 1);
         return !ret;
     }
-
-
-
-
-
-
 }
