@@ -1,17 +1,29 @@
 import mayflower.*;
 
-public class GravityActor extends Actor {
-    final int GRAVITY = 10;
+public class GravityActor extends GravityTimer {
+    final double GRAVITY = 9.8;
     final int TERMINAL_VELOCITY = 300;
-    int vertical_speed = 0;
+    double vertical_speed = 0;
+    private int t = 0;
     public void act() {
+        //t = 0;
+        while(!isBlocked() && vertical_speed < TERMINAL_VELOCITY)
+        {
+            vertical_speed = vertical_speed + GRAVITY*((1000-g.getTimeLeft())+ t);
+            t+=1000;
+        }
+
+        /*
+        int t = 0;
         if (!isBlocked() && vertical_speed < 300) {
             vertical_speed = vertical_speed + GRAVITY;
             if (vertical_speed > TERMINAL_VELOCITY) {
                 vertical_speed = TERMINAL_VELOCITY;
             }
             setLocation(getX(), getY() + vertical_speed);
-        }
+
+         */
+
         if (isBlocked()) {
             setLocation(getX(), getY() - vertical_speed);
             vertical_speed = 0;
@@ -33,6 +45,7 @@ public class GravityActor extends Actor {
         setLocation(getX(), getY() - 1);
         return !ret;
     }
+
 
 
 
