@@ -5,7 +5,7 @@ public class GravityActor extends Actor {
     final double TERMINAL_VELOCITY = 30;
     double vertical_speed = 0;
     public void act() {
-        if (!isBlocked() && vertical_speed < TERMINAL_VELOCITY) {
+        if (!isBlocked() && vertical_speed > TERMINAL_VELOCITY) {
             vertical_speed = vertical_speed + GRAVITY;
             if (vertical_speed == TERMINAL_VELOCITY || vertical_speed > TERMINAL_VELOCITY) {
                 vertical_speed = TERMINAL_VELOCITY;
