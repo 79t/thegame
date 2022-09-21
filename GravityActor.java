@@ -1,13 +1,13 @@
 import mayflower.*;
 
 public class GravityActor extends Actor {
-    final int GRAVITY = 10;
-    final int TERMINAL_VELOCITY = 300;
-    int vertical_speed = 0;
+    final double GRAVITY = 0.5;
+    final double TERMINAL_VELOCITY = 30;
+    double vertical_speed = 0;
     public void act() {
-        if (!isBlocked() && vertical_speed < 300) {
+        if (!isBlocked() && vertical_speed < TERMINAL_VELOCITY) {
             vertical_speed = vertical_speed + GRAVITY;
-            if (vertical_speed > TERMINAL_VELOCITY) {
+            if (vertical_speed == TERMINAL_VELOCITY || vertical_speed > TERMINAL_VELOCITY) {
                 vertical_speed = TERMINAL_VELOCITY;
             }
             setLocation(getX(), getY() + vertical_speed);
