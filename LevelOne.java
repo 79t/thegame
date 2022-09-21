@@ -5,6 +5,8 @@ public class LevelOne extends World {
 
     public LevelOne()
     {
+        setBackground("assets/BG/overworldBG.png");
+
         // TODO: Build Overworld
         //      objects, hazards, etc
         Mayflower.showBounds(true);
