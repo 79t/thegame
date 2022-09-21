@@ -16,7 +16,7 @@ public class LevelOne extends World {
             if (i != 6) addObject(new Block(), i * 100, (tiles.length - 1) * 100);
         }
 
-        addObject(new Cat(),0, 400);
+        addObject(new Cat(),0, 300);
 
 
     }
