@@ -1,16 +1,25 @@
 import mayflower.*;
 public class LevelOne extends World {
 
+    private String[][] tiles;
+
     public LevelOne()
     {
+        setBackground("assets/BG/overworldBG.png");
+
         // TODO: Build Overworld
         //      objects, hazards, etc
         Mayflower.showBounds(true);
         showText("this is the world", 350, 250, Color.BLACK);
         showText("press w to win; l to lose", 350, 350, Color.BLACK);
-        addObject(new Block(), 0, 500);
-        addObject(new Block(), 128, 500);
-        addObject(new Cat(), 0, 0);
+
+        tiles = new String[6][8];
+        for (int i = 0; i < tiles[0].length; i++) {
+            if (i != 6) addObject(new Block(), i * 100, (tiles.length - 1) * 100);
+        }
+
+        addObject(new Cat(),0, 300);
+
 
     }
 

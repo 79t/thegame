@@ -46,16 +46,6 @@ public class MovableAnimatedActor extends AnimatedActor {
             if (isTouching(Block.class)) {
                 setLocation(x+1,y);
             }
-            // } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y + 1 + h <= 600)) {
-            // setLocation(x, y + 1);
-            // if (isTouching(Block.class)) {
-            // setLocation(x, y - 1);
-            // }
-            // } else if (Mayflower.isKeyDown(Keyboard.KEY_UP) && (y - 1 >= 0)) {
-            // setLocation(x, y - 1);
-            // if (isTouching(Block.class)) {                
-            // setLocation(x, y + 1);
-            // }
         } else {
             if (direction != null && direction.equals("left")) {
                 newAction = "idleLeft";
