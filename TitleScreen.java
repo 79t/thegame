@@ -2,7 +2,7 @@ import mayflower.*;
 
 public class TitleScreen extends World {
 
-    private Zombie zombie;
+
     public TitleScreen() {
         setBackground("assets/BG/BG.png");
         showText("GAME", 350, 250, Color.BLACK);

@@ -18,7 +18,7 @@ public class LevelOne extends World {
         }
 
         addObject(new Cat(),0, 300);
-        addObject(new Zombie(), 0, 300);
+
 
     }
 
