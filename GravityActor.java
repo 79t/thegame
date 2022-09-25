@@ -22,6 +22,7 @@ public class GravityActor extends Actor {
             velY = TERMINAL;
 
         if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE)) {
+            setLocation(getX(), getY() - 5);
             jumping = true;
             velY = -5;
         }
