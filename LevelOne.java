@@ -20,6 +20,9 @@ public class LevelOne extends World {
                 if (j == 5) {
                     addObject(new Block(), i * 100, j * 100);
                 }
+                if (j == 4 && i == 2) {
+                    addObject(new Emerald(), i * 100, j * 100);
+                }
             }
         }
         System.out.println(bc);
