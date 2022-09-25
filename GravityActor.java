@@ -1,12 +1,12 @@
 import mayflower.*;
 
-public class GravityJumpingActorThing extends GravityTimer {
+public class GravityActor extends GravityTimer {
     final double GRAVITY = 9.8;
     final int TERMINAL_VELOCITY = 300;
     double vertical_speed = 0;
     private int t = 0;
     private boolean isJumping;
-    public GravityJumpingActorThing()
+    public GravityActor()
     {
         isJumping = false;
     }
@@ -36,9 +36,9 @@ public class GravityJumpingActorThing extends GravityTimer {
             setLocation(getX(), getY()+1);
             if (isBlocked()) {
                 isJumping = true;
-                Timer jumpTimer = new Timer(40000);
+                Timer jumpTimer = new Timer(6000);
                 while (!jumpTimer.isDone()) {
-                    setLocation(getX()+100, getY() - 100);
+                    setLocation(getX()+2, getY() - 2);
                 }
                 isJumping = false;
                 jumpTimer.reset();
