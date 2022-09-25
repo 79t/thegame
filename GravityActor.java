@@ -24,10 +24,7 @@ public class GravityActor extends Actor {
     }
 
     private boolean isBlocked() {
-        setLocation(getX(), getY() + 1);
-        boolean it = isTouching(Block.class);
-        setLocation(getX(), getY() - 1);
-        return it;
+        return isTouching(Block.class);
     }
 
     public boolean isFalling() {
