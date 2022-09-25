@@ -36,9 +36,9 @@ public class GravityActor extends GravityTimer {
             setLocation(getX(), getY()+1);
             if (isBlocked()) {
                 isJumping = true;
-                Timer jumpTimer = new Timer(6000);
+                Timer jumpTimer = new Timer(4000);
                 while (!jumpTimer.isDone()) {
-                    setLocation(getX()+2, getY() - 2);
+                    setLocation(getX()+1, getY() - 1);
                 }
                 isJumping = false;
                 jumpTimer.reset();
@@ -50,9 +50,9 @@ public class GravityActor extends GravityTimer {
             setLocation(getX(), getY()+1);
             if (isBlocked()) {
                 isJumping = true;
-                Timer jumpTimer = new Timer(40000);
+                Timer jumpTimer = new Timer(10000);
                 while (!jumpTimer.isDone()) {
-                    setLocation(getX(), getY() - 100);
+                    setLocation(getX(), getY() - 5);
                 }
                 isJumping = false;
                 jumpTimer.reset();
