@@ -16,7 +16,9 @@ public class GravityActor extends Actor {
             velY = 0;
         }
 
-        if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE) && isBlocked()) {
+        if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE)) {
+            while(!isBlocked())
+                setLocation(getX(), getY() + 1);
             velY = -5;
         }
     }
