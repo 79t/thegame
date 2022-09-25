@@ -13,6 +13,9 @@ public class LevelOne extends World {
         showText("this is the world", 350, 250, Color.BLACK);
         showText("press w to win; l to lose", 350, 350, Color.BLACK);
 
+        Emerald e = new Emerald();
+        addObject(e, 100, 400);
+
         tiles = new String[6][8];
         int bc = 0;
         for (int i = 0; i < tiles[0].length; i++) {
@@ -20,14 +23,13 @@ public class LevelOne extends World {
                 if (j == 5) {
                     addObject(new Block(), i * 100, j * 100);
                 }
-                if (j == 4 && i == 2) {
-                    addObject(new Emerald(), i * 100, j * 100);
-                }
             }
         }
         System.out.println(bc);
 
-        addObject(new Cat(),0, 300);
+        Cat c = new Cat();
+        addObject(c,0, 300);
+        showText("score is " + c.getScore(), 10, 30, Color.BLACK);
 
 
     }

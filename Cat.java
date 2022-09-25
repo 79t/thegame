@@ -7,9 +7,11 @@ public class Cat extends MovableAnimatedActor
     private Animation fallRight;
     private Animation fallLeft;
     private Animation idleLeft;
+    private int score;
 
     public Cat()
     {
+        score = 0;
         String[] idleImages = new String[10];
         for (int i = 0; i < idleImages.length; i++)
             idleImages[i] = String.format("assets/cat/Idle (%d).png", i + 1);
@@ -63,6 +65,18 @@ public class Cat extends MovableAnimatedActor
     public void act()
     {
         super.act();
+        updateScore();
     }
+
+    public int getScore() { return score; }
+    public void incScore() { score++; }
+
+    private void updateScore() {
+        World w = getWorld();
+        w.removeText(10, 30);
+        w.showText("score: " + this.getScore(), 10, 30, Color.BLACK);
+    }
+
+
 
 }
