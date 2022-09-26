@@ -13,7 +13,7 @@ public class GravityActor extends Actor {
         }
 
         if (isBlocked()) {
-            setLocation(getX(), getY());
+            setLocation(getX(), getY() - 2);
             jumping = false;
             velY = 0;
         }
