@@ -33,7 +33,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         int h = getHeight();
 
         if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && (x + 1 + w <= 800)) {
-            setLocation(x + 1, y);
+            setLocation(x + 2, y);
             newAction = "walkRight";
             direction = "right";
             if (isTouching(Block.class)) {
@@ -44,7 +44,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             newAction = "walkLeft";
             direction = "left";
             if (isTouching(Block.class)) {
-                setLocation(x+1,y);
+                setLocation(x+2,y);
             }
             // } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y + 1 + h <= 600)) {
             // setLocation(x, y + 1);
