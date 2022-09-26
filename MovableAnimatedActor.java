@@ -37,10 +37,10 @@ public class MovableAnimatedActor extends AnimatedActor {
             newAction = "walkRight";
             direction = "right";
             if (isTouching(Block.class)) {
-                setLocation(x-1, y);
+                setLocation(x-2, y);
             }
         } else if (Mayflower.isKeyDown(Keyboard.KEY_LEFT) && (x - 1 >= 0)) {
-            setLocation(x - 1, y);
+            setLocation(x - 2, y);
             newAction = "walkLeft";
             direction = "left";
             if (isTouching(Block.class)) {
