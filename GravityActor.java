@@ -1,7 +1,7 @@
 import mayflower.*;
 
 public class GravityActor extends Actor {
-    private float gravity = 0.1f;
+    private float gravity = 0.2f;
     private float velY;
     final int TERMINAL = 5;
     private boolean jumping = false;
@@ -24,7 +24,7 @@ public class GravityActor extends Actor {
         if (Mayflower.isKeyPressed(Keyboard.KEY_SPACE) && !isFalling()) {
             setLocation(getX(), getY() - 5);
             jumping = true;
-            velY = -5;
+            velY = -8;
         }
     }
 
