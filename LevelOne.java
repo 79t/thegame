@@ -28,7 +28,7 @@ public class LevelOne extends World {
         System.out.println(bc);
 
         Cat c = new Cat();
-        addObject(c,0, 300);
+        addObject(c,0, 200);
         showText("score is " + c.getScore(), 10, 30, Color.BLACK);
 
 
