@@ -16,6 +16,9 @@ public class LevelOne extends World {
         Emerald e = new Emerald();
         addObject(e, 100, 400);
 
+        tiles[5][5] = "lava";
+        addObject(new Lava(), 500, 515);
+
         tiles = new String[6][8];
         for (int i = 0; i < tiles[0].length; i++) {
             for (int j = 0; j < tiles.length; j++) {
@@ -25,8 +28,7 @@ public class LevelOne extends World {
                 }
             }
         }
-        tiles[5][5] = "lava";
-        addObject(new Lava(), 500, 515);
+
 
         Cat c = new Cat();
         addObject(c,0, 200);
