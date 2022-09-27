@@ -8,10 +8,12 @@ public class Cat extends MovableAnimatedActor
     private Animation fallLeft;
     private Animation idleLeft;
     private int score;
+    private int health;
 
     public Cat()
     {
         score = 0;
+        health = 100;
         String[] idleImages = new String[10];
         for (int i = 0; i < idleImages.length; i++)
             idleImages[i] = String.format("assets/cat/Idle (%d).png", i + 1);
@@ -66,15 +68,32 @@ public class Cat extends MovableAnimatedActor
     {
         super.act();
         updateScore();
+        if (health <= 0) {
+            World gameOver = new GameOverLose();
+            Mayflower.setWorld(gameOver);
+        }
     }
 
     public int getScore() { return score; }
     public void incScore() { score++; }
 
+    public int getHealth() { return health; }
+    public void decrHealth(int howMany) {
+        health -= howMany;
+    }
+    public void incrHealth(int howMany) {
+        health += howMany;
+    }
+
+
     private void updateScore() {
         World w = getWorld();
         w.removeText(10, 30);
-        w.showText("score: " + this.getScore(), 10, 30, Color.BLACK);
+        w.showText("score: " + this.getScore() + " health: " + this.getHealth(), 10, 30, Color.BLACK);
+    }
+
+    public void respawn() {
+        setLocation(0, 200);
     }
 
 

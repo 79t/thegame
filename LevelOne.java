@@ -17,15 +17,16 @@ public class LevelOne extends World {
         addObject(e, 100, 400);
 
         tiles = new String[6][8];
-        int bc = 0;
         for (int i = 0; i < tiles[0].length; i++) {
             for (int j = 0; j < tiles.length; j++) {
-                if (j == 5) {
+                if (j == 5 && i != 5) {
                     addObject(new Block(), i * 100, j * 100);
+                    tiles[j][i] = "block";
                 }
             }
         }
-        System.out.println(bc);
+        tiles[5][5] = "lava";
+        addObject(new Lava(), 500, 515);
 
         Cat c = new Cat();
         addObject(c,0, 200);
