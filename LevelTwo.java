@@ -3,6 +3,7 @@ import mayflower.*;
 public class LevelTwo extends World {
 
     private String[][] tiles;
+    private String[][] tilesTwo;
     private Cat c;
 
     private TextRenderer t;
@@ -23,11 +24,17 @@ public class LevelTwo extends World {
         for (int i = 0; i < tiles[0].length; i++) {
             for (int j = 0; j < tiles.length; j++) {
                 if (j == 5) {
-                    addObject(new Block(), i * 100, j * 100);
+                    addObject(new Block(), i * 50, j * 100);
+                    addObject(new Lava(), i * 50 + 350, j * 100);
                 }
             }
         }
-        addObject(new Block(), 400, 400);
+
+        addObject(new Block(), 475, 375);
+        addObject(new Block(), 690, 250);
+        addObject(new Emerald(), 100, 400);
+        NetherPortal n = new NetherPortal();
+        addObject(n, 700, 120);
         System.out.println(bc);
 
         c = new Cat(score, health);
