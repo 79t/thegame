@@ -35,10 +35,13 @@ public class GravityActor extends Actor {
             velY = 0;
             if (Mayflower.isKeyDown(Keyboard.KEY_SPACE) || Mayflower.isKeyDown(Keyboard.KEY_UP)) {
                 setLocation(getX(), getY() - 1);
-            } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)){
+            }
+            if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)){
                 setLocation(getX(), getY() + 1);
             }
         }
+
+
     }
 
     // blocked and falling checks
