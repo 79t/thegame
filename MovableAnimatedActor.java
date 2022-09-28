@@ -46,6 +46,9 @@ public class MovableAnimatedActor extends AnimatedActor {
             if (isTouching(Block.class)) {
                 setLocation(x+2,y);
             }
+
+
+
             // } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y + 1 + h <= 600)) {
             // setLocation(x, y + 1);
             // if (isTouching(Block.class)) {
