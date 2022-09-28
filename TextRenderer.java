@@ -8,7 +8,10 @@ public class TextRenderer {
 
     public TextRenderer(World wo) {
         w = wo;
-        Map<?, ?> mappings = Map.of(LevelOne.class, Color.BLACK, LevelTwo.class, Color.WHITE);
+        Map<?, ?> mappings = Map.of(
+                LevelOne.class, Color.BLACK,
+                LevelTwo.class, Color.WHITE
+        );
         color = (Color) mappings.get(w.getClass());
     }
 
