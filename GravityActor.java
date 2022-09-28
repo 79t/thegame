@@ -28,10 +28,11 @@ public class GravityActor extends Actor {
         }
         if (isTouching(Ladder.class)) {
             velY = 0;
-            if (Mayflower.isKeyDown(Keyboard.KEY_SPACE))
+            if (Mayflower.isKeyDown(Keyboard.KEY_SPACE) || Mayflower.isKeyDown(Keyboard.KEY_UP)) {
                 setLocation(getX(), getY() - 1);
-            if (Mayflower.isKeyDown(Keyboard.KEY_DOWN))
+            } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)){
                 setLocation(getX(), getY() + 1);
+            }
         }
     }
 
