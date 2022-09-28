@@ -2,7 +2,7 @@ import mayflower.*;
 
 public class Emerald extends Actor {
     public Emerald() {
-        MayflowerImage e = new MayflowerImage("assets/Object/em3.png");
+        MayflowerImage e = new MayflowerImage("assets/Object/emerald.png");
         e.scale(62, 62);
         setImage(e);
     }

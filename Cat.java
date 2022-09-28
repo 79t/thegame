@@ -10,10 +10,10 @@ public class Cat extends MovableAnimatedActor
     private int score;
     private int health;
 
-    public Cat()
+    public Cat(int startScore, int startHealth)
     {
-        score = 0;
-        health = 100;
+        score = startScore;
+        health = startHealth;
         String[] idleImages = new String[10];
         for (int i = 0; i < idleImages.length; i++)
             idleImages[i] = String.format("assets/cat/Idle (%d).png", i + 1);
@@ -67,7 +67,7 @@ public class Cat extends MovableAnimatedActor
     public void act()
     {
         super.act();
-        updateScore();
+//        updateScore();
         if (health <= 0) {
             World gameOver = new GameOverLose();
             Mayflower.setWorld(gameOver);
@@ -86,11 +86,11 @@ public class Cat extends MovableAnimatedActor
     }
 
 
-    private void updateScore() {
-        World w = getWorld();
-        w.removeText(10, 30);
-        w.showText("score: " + this.getScore() + " health: " + this.getHealth(), 10, 30, Color.BLACK);
-    }
+//    private void updateScore() {
+//        World w = getWorld();
+//        w.removeText(10, 30);
+//        w.showText("score: " + this.getScore() + " health: " + this.getHealth(), 10, 30);
+//    }
 
     public void respawn() {
         setLocation(0, 200);
