@@ -26,6 +26,14 @@ public class GravityActor extends Actor {
             jumping = true;
             velY = -7;
         }
+        if (isTouching(Ladder.class)) {
+            velY = 0;
+            if (Mayflower.isKeyDown(Keyboard.KEY_SPACE) || Mayflower.isKeyDown(Keyboard.KEY_UP)) {
+                setLocation(getX(), getY() - 1);
+            } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)){
+                setLocation(getX(), getY() + 1);
+            }
+        }
     }
 
     private boolean isBlocked() {
@@ -35,8 +43,10 @@ public class GravityActor extends Actor {
     public boolean isFalling() {
         boolean ret;
         setLocation(getX(), getY() + 1);
-        ret = isTouching(Block.class);
+        ret = isTouching(Block.class) || isTouching(Ladder.class) ;
         setLocation(getX(), getY() - 1);
         return !ret;
     }
+
+
 }

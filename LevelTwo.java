@@ -27,6 +27,7 @@ public class LevelTwo extends World {
                 }
             }
         }
+        addObject(new Ladder(), 300, 400);
         addObject(new Block(), 400, 400);
         System.out.println(bc);
 
