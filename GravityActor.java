@@ -32,6 +32,7 @@ public class GravityActor extends Actor {
                 setLocation(getX(), getY() - 1);
             } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)){
                 setLocation(getX(), getY() + 1);
+                velY = 1;
             }
         }
     }
