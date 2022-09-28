@@ -1,5 +1,6 @@
 import mayflower.*;
 
+// Bonus score object
 public class Emerald extends Actor {
     public Emerald() {
         MayflowerImage e = new MayflowerImage("assets/Object/emerald.png");
@@ -7,6 +8,7 @@ public class Emerald extends Actor {
         setImage(e);
     }
 
+    // if the cat hits an emerald, change its score and delete the emerald
     public void act() {
         if (isTouching(Cat.class)) {
             Cat c = (Cat)getOneIntersectingObject(Cat.class);
