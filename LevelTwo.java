@@ -1,5 +1,6 @@
 import mayflower.*;
 
+// this is the 2nd level
 public class LevelTwo extends World {
 
     private String[][] tiles;
@@ -12,12 +13,11 @@ public class LevelTwo extends World {
         Mayflower.showBounds(true);
         setBackground("assets/BG/nethre.jpeg");
 
-        // TODO: Build Overworld
-        //      objects, hazards, etc
         Mayflower.showBounds(true);
         t.showText("this is world 2", 350, 250);
         t.showText("press w to win; l to lose", 350, 350);
 
+        // make tiles, add blocks
         tiles = new String[6][8];
         int bc = 0;
         for (int i = 0; i < tiles[0].length; i++) {
@@ -27,10 +27,13 @@ public class LevelTwo extends World {
                 }
             }
         }
+
+        // add climbing ladder
         addObject(new Ladder(), 300, 400);
         addObject(new Block(), 400, 400);
         System.out.println(bc);
 
+        // make cat with same score and health as LevelOne
         c = new Cat(score, health);
 
         addObject(c,0, 300);

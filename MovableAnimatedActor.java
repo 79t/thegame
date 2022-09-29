@@ -1,12 +1,18 @@
 import mayflower.*;
 
+/**
+ * an actor that can move, has animations for each move type as well as idling
+ */
 public class MovableAnimatedActor extends AnimatedActor {
+    // animations for each type of movement
     private Animation walkRight;
     private Animation idleRight;
     private Animation idleLeft;
     private Animation walkLeft;
     private Animation falling;
     private Animation fallingRight;
+
+    // variables to keep track of which way its going, and whats happening right now
     private String currentAction;
     private String direction;
 
@@ -21,6 +27,7 @@ public class MovableAnimatedActor extends AnimatedActor {
     }
 
     public void act() {
+        // if there isnt an action, set the action to idleRight
         String newAction = null;
         if (currentAction == null) {
             newAction = "idleRight";
@@ -32,6 +39,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         int w = getWidth();
         int h = getHeight();
 
+        // movement commands, with bounds checking
         if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && (x + 1 + w <= 800)) {
             setLocation(x + 2, y);
             newAction = "walkRight";
@@ -48,6 +56,7 @@ public class MovableAnimatedActor extends AnimatedActor {
             }
 
 
+            // change action based on direction and newaction
 
             // } else if (Mayflower.isKeyDown(Keyboard.KEY_DOWN) && (y + 1 + h <= 600)) {
             // setLocation(x, y + 1);
@@ -94,7 +103,7 @@ public class MovableAnimatedActor extends AnimatedActor {
 
     }
 
-
+    // setters
     public void setAnimation(Animation a) {
         super.setAnimation(a);
     }
