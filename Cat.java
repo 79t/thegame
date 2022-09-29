@@ -1,6 +1,14 @@
 import mayflower.*;
+
+/**
+ * @author suhas, alex, tarun
+ * A cat that moves, falls, idles, and has a score and health
+ */
 public class Cat extends MovableAnimatedActor
 {
+    // Initialize the variables
+    // animations for walk idle fall in both directions
+    // score and health trackers
     private Animation walkRight;
     private Animation idleRight;
     private Animation walkLeft;
@@ -10,11 +18,14 @@ public class Cat extends MovableAnimatedActor
     private int score;
     private int health;
 
+
+    // create a new cat with a starting score and health attached
     public Cat(int startScore, int startHealth)
     {
         score = startScore;
         health = startHealth;
         String[] idleImages = new String[10];
+        // make list of images for walking, idling, and falling
         for (int i = 0; i < idleImages.length; i++)
             idleImages[i] = String.format("assets/cat/Idle (%d).png", i + 1);
 
@@ -27,6 +38,8 @@ public class Cat extends MovableAnimatedActor
             fallImages[i] = String.format("assets/cat/Fall (%d).png", i + 1);
 
 
+        // make animation for idleright, change size and bounds
+        // and do the same for idleleft, but mirrored
         idleRight = new Animation(50000000, idleImages);
         idleRight.scale(100, 87);
         idleRight.setBounds(18, 5, 54, 80);
@@ -37,6 +50,7 @@ public class Cat extends MovableAnimatedActor
         idleLeft.mirrorHorizontally();
         idleLeft.setBounds(18, 5, 54, 80);
 
+        // do the same thing for walking and fallign but with different images and stuff i guess
         walkRight = new Animation(50000000, walkImages);
         walkRight.scale(100, 87);
         walkRight.setBounds(18, 5, 54, 80);
@@ -56,7 +70,7 @@ public class Cat extends MovableAnimatedActor
         fallLeft.scale(100, 87);
         fallLeft.setBounds(28, 5, 54, 80);
 
-
+        // set animations to the animatiosn
         setIdleRightAnimation(idleRight);
         setIdleLeftAnimation(idleLeft);
         setWalkRightAnimation(walkRight);
@@ -66,17 +80,20 @@ public class Cat extends MovableAnimatedActor
     }
     public void act()
     {
+        // movement logic (moving + gravity) is in superclasses, so call those
         super.act();
-//        updateScore();
+        // die if health is too low
         if (health <= 0) {
             World gameOver = new GameOverLose();
             Mayflower.setWorld(gameOver);
         }
     }
 
+    // getters and setters for score
     public int getScore() { return score; }
     public void incScore() { score++; }
 
+    // getters and setters for health
     public int getHealth() { return health; }
     public void decrHealth(int howMany) {
         health -= howMany;
@@ -85,13 +102,7 @@ public class Cat extends MovableAnimatedActor
         health += howMany;
     }
 
-
-//    private void updateScore() {
-//        World w = getWorld();
-//        w.removeText(10, 30);
-//        w.showText("score: " + this.getScore() + " health: " + this.getHealth(), 10, 30);
-//    }
-
+    // remake actors, used when damage is taken
     public void respawn() {
         setLocation(0, 200);
     }

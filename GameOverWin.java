@@ -1,5 +1,7 @@
 import mayflower.*;
 
+
+// screen for pro gamers
 public class GameOverWin extends World {
     public GameOverWin() {
         showText("you win!!", 350, 250, Color.BLACK);

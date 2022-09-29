@@ -1,6 +1,9 @@
 import mayflower.*;
 import java.util.Map;
 
+/**
+ * Helper class to dynamically change the color of the text and remember it based on the current world
+ */
 
 public class TextRenderer {
     private final World w;
