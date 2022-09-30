@@ -33,6 +33,8 @@ public class GravityActor extends Actor {
             }
             if (Mayflower.isKeyDown(Keyboard.KEY_DOWN)){
                 setLocation(getX(), getY() + 1);
+                if (isTouching.Block)
+                    setLocation(getX(), getY() - 1);
             }
         }
 
