@@ -3,6 +3,7 @@ import mayflower.Keyboard;
 import mayflower.Mayflower;
 import mayflower.World;
 
+// screen for the non-pro gamers
 public class GameOverLose extends World {
     public GameOverLose() {
         showText("you lose!!", 350, 250, Color.BLACK);

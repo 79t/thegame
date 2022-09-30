@@ -1,5 +1,7 @@
 import mayflower.*;
 
+
+// THe first level
 public class LevelOne extends World {
 
     private String[][] tiles;
@@ -23,11 +25,12 @@ public class LevelOne extends World {
         Emerald e = new Emerald();
         addObject(e, 100, 400);
 
+        // tiles array
         tiles = new String[6][8];
-
+        // add hazards
         tiles[4][5] = "lava";
         addObject(new Lava(), 400, 515);
-
+        // add blocks
         for (int i = 0; i < tiles[0].length; i++) {
             for (int j = 0; j < tiles.length; j++) {
                 if (j == 5 && i != 4) {
@@ -37,7 +40,7 @@ public class LevelOne extends World {
             }
         }
 
-
+        // add main character
         c = new Cat(0, 100);
         addObject(c,0, 200);
         showText("score is " + c.getScore(), 10, 30, Color.BLACK);
@@ -61,6 +64,7 @@ public class LevelOne extends World {
             Mayflower.setWorld(lose);
         }
 
+        // scoere and health text
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
 
