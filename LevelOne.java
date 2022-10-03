@@ -16,8 +16,7 @@ public class LevelOne extends World {
         // TODO: Build Overworld
         //      objects, hazards, etc
         Mayflower.showBounds(true);
-        t.showText("this is the world", 350, 250);
-        t.showText("press w to win; l to lose", 350, 350);
+        t.showText("welcome to the overworld!", 350, 250);
 
         NetherPortal n = new NetherPortal();
         addObject(n, 700, 380);
@@ -48,25 +47,16 @@ public class LevelOne extends World {
 
     }
 
-    public TextRenderer getTextRenderer() {
-        return t;
-    }
 
 
     public void act()
     {
 
-        if (Mayflower.isKeyPressed(Keyboard.KEY_W)) {
-            World win = new GameOverWin();
-            Mayflower.setWorld(win);
-        } else if (Mayflower.isKeyPressed(Keyboard.KEY_L)) {
-            World lose = new GameOverLose();
-            Mayflower.setWorld(lose);
-        }
-
-        // scoere and health text
+        // score and health text
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
+        
+
 
     }
 

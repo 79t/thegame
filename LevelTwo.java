@@ -1,5 +1,6 @@
 import mayflower.*;
 
+// this is the 2nd level
 public class LevelTwo extends World {
 
     private String[][] tiles;
@@ -13,30 +14,30 @@ public class LevelTwo extends World {
         Mayflower.showBounds(true);
         setBackground("assets/BG/nethre.jpeg");
 
-        // TODO: Build Overworld
-        //      objects, hazards, etc
         Mayflower.showBounds(true);
-        t.showText("this is world 2", 350, 250);
-        t.showText("press w to win; l to lose", 350, 350);
+        t.showText("welcome to the nether", 350, 250);
 
+        // make tiles, add blocks
         tiles = new String[6][8];
-        int bc = 0;
         for (int i = 0; i < tiles[0].length; i++) {
             for (int j = 0; j < tiles.length; j++) {
                 if (j == 5) {
-                    addObject(new Block(), i * 50, j * 100);
-                    addObject(new Lava(), i * 50 + 350, j * 100);
+                    addObject(new Block(), i * 100, j * 100);
                 }
             }
         }
 
-        addObject(new Block(), 475, 375);
-        addObject(new Block(), 690, 250);
+        // add climbing ladder
+        // addObject(new Block(), 475, 375);
         addObject(new Emerald(), 100, 400);
-        NetherPortal n = new NetherPortal();
-        addObject(n, 700, 120);
-        System.out.println(bc);
+        // addObject(new Block(), 400, 400);
 
+        addObject(new Blaze(700, 400), 700, 400);
+
+        EndPortal e = new EndPortal();
+        addObject(e, 700, 120);
+
+        // make cat with same score and health as LevelOne
         c = new Cat(score, health);
 
         addObject(c,0, 300);
@@ -47,13 +48,6 @@ public class LevelTwo extends World {
     public void act()
     {
 
-        if (Mayflower.isKeyPressed(Keyboard.KEY_W)) {
-            World win = new GameOverWin();
-            Mayflower.setWorld(win);
-        } else if (Mayflower.isKeyPressed(Keyboard.KEY_L)) {
-            World lose = new GameOverLose();
-            Mayflower.setWorld(lose);
-        }
 
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
@@ -62,9 +56,6 @@ public class LevelTwo extends World {
     }
 
 
-    public TextRenderer getTextRenderer() {
-        return t;
-    }
 
 
 }
