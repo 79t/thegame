@@ -9,7 +9,7 @@ public class NetherPortal extends Actor {
         m.scale(128, 128);
         setImage(m);
         TinySound.init();
-        mu = TinySound.loadMusic("assets/pigstep.wav");
+        mu = TinySound.loadMusic("assets/music/subwooferlullaby.wav");
         mu.play(true);
     }
     public void act() {
@@ -24,4 +24,9 @@ public class NetherPortal extends Actor {
             Mayflower.setWorld(newWorld);
         }
     }
+
+    public void pause() { mu.pause(); }
+    public void resume() { mu.resume(); }
+
+
 }

@@ -55,6 +55,8 @@ public class LevelOne extends World {
         // score and health text
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
+        
+
 
     }
 

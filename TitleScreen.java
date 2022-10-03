@@ -5,7 +5,7 @@ public class TitleScreen extends World {
     private Music m;
     public TitleScreen() {
         TinySound.init();
-        m = TinySound.loadMusic("assets/halo.wav");
+        m = TinySound.loadMusic("assets/music/halo.wav");
         m.play(true);
         setBackground("assets/BG/BG.png");
         showText("GAME", 350, 250, Color.BLACK);

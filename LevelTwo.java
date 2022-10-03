@@ -32,8 +32,8 @@ public class LevelTwo extends World {
         addObject(new Emerald(), 100, 400);
         addObject(new Block(), 400, 400);
 
-        NetherPortal n = new NetherPortal();
-        addObject(n, 700, 120);
+        EndPortal e = new EndPortal();
+        addObject(e, 700, 120);
 
         // make cat with same score and health as LevelOne
         c = new Cat(score, health);
