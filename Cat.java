@@ -1,3 +1,5 @@
+import kuusisto.tinysound.Music;
+import kuusisto.tinysound.TinySound;
 import mayflower.*;
 
 /**
@@ -17,6 +19,7 @@ public class Cat extends MovableAnimatedActor
     private Animation idleLeft;
     private int score;
     private int health;
+    private Music m;
 
 
     // create a new cat with a starting score and health attached

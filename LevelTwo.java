@@ -15,8 +15,7 @@ public class LevelTwo extends World {
         setBackground("assets/BG/nethre.jpeg");
 
         Mayflower.showBounds(true);
-        t.showText("this is world 2", 350, 250);
-        t.showText("press w to win; l to lose", 350, 350);
+        t.showText("welcome to the nether", 350, 250);
 
         // make tiles, add blocks
         tiles = new String[6][8];
@@ -47,13 +46,6 @@ public class LevelTwo extends World {
     public void act()
     {
 
-        if (Mayflower.isKeyPressed(Keyboard.KEY_W)) {
-            World win = new GameOverWin();
-            Mayflower.setWorld(win);
-        } else if (Mayflower.isKeyPressed(Keyboard.KEY_L)) {
-            World lose = new GameOverLose();
-            Mayflower.setWorld(lose);
-        }
 
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
@@ -62,9 +54,6 @@ public class LevelTwo extends World {
     }
 
 
-    public TextRenderer getTextRenderer() {
-        return t;
-    }
 
 
 }
