@@ -28,9 +28,11 @@ public class LevelTwo extends World {
         }
 
         // add climbing ladder
-        addObject(new Block(), 475, 375);
+        // addObject(new Block(), 475, 375);
         addObject(new Emerald(), 100, 400);
-        addObject(new Block(), 400, 400);
+        // addObject(new Block(), 400, 400);
+
+        addObject(new Blaze(700, 400), 700, 400);
 
         EndPortal e = new EndPortal();
         addObject(e, 700, 120);
