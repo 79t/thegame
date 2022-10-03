@@ -37,6 +37,10 @@ public class LevelTwo extends World {
         EndPortal e = new EndPortal();
         addObject(e, 700, 120);
 
+        addObject(new Ladder(), 700, 220);
+        addObject(new Ladder(), 700, 320);
+
+
         // make cat with same score and health as LevelOne
         c = new Cat(score, health);
 
