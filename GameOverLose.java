@@ -1,3 +1,4 @@
+import kuusisto.tinysound.TinySound;
 import mayflower.Color;
 import mayflower.Keyboard;
 import mayflower.Mayflower;
@@ -8,6 +9,7 @@ public class GameOverLose extends World {
     public GameOverLose() {
         showText("you lose!!", 350, 250, Color.BLACK);
         showText("press q to quit", 350, 350, Color.BLACK);
+        TinySound.shutdown();
     }
 
     public void act() {

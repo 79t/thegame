@@ -31,7 +31,8 @@ public class LevelTwo extends World {
         // addObject(new Block(), 475, 375);
         addObject(new Emerald(), 100, 400);
         // addObject(new Block(), 400, 400);
-
+        d = new Dog();
+        
         addObject(new Blaze(700, 400), 700, 400);
 
         EndPortal e = new EndPortal();
@@ -45,16 +46,17 @@ public class LevelTwo extends World {
         c = new Cat(score, health);
 
         addObject(c,0, 300);
-        d = new Dog();
-        addObject(d, 200,400 );
-
+        
+        
     }
-    public void automatedDogMovement()
+    
+    public void automatedDogMovement(Dog d)
     {
+        
         while(c.getHealth() != 0)
         {
         int z = (int)Math.random()*4;
-        if(z < 1  && ((d.getX() - 1 >= 0)))
+        if(z < 1  && ((d.getX() >= 0)))
             d.setLocation(d.getX()-1, d.getY());
         else if (z >= 1 && z < 2  && (d.getX() + 1 + d.getWidth() <= 800))
             d.setLocation(d.getX() + 1, d.getY());
@@ -66,22 +68,25 @@ public class LevelTwo extends World {
          if(d.isTouching(Blaze.class))
          {
             d.setLocation(d.getX(), d.getY() - 1);
+            d.setLocation(d.getX(), d.getY()+1);
             //jumping = true;
             //velY = -1;
+         
          }
         }
-         
     }
+    
+         
+    
     public void act()
     {
 
-
+        
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
 
 
     }
-
 
 
 
