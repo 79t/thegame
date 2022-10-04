@@ -4,9 +4,9 @@ import mayflower.*;
 // lava hazard that removes cats health by 50 and respawns the cat
 public class Lava extends Actor {
     public Lava() {
-        MayflowerImage m = new MayflowerImage("assets/Object/lava.jpeg");
-        m.scale(128, 128);
-        setImage(m);
+        MayflowerImage img = new MayflowerImage("assets/Object/lava.jpeg");
+        img.scale(128, 128);
+        setImage(img);
     }
 
     public void act() {
