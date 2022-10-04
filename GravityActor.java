@@ -59,5 +59,10 @@ public class GravityActor extends Actor {
         return !ret;
     }
 
-
+    public void automatedDogMovement()
+    {
+        int z = (int)Math.random()*4;
+        if(z < 1 && !isFalling())
+            setLocation(getX()-1, getY());
+    }
 }
