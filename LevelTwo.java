@@ -6,7 +6,7 @@ public class LevelTwo extends World {
     private String[][] tiles;
     // private String[][] tilesTwo;
     private Cat c;
-
+    private Dog d;
     private TextRenderer t;
     public LevelTwo(int score, int health)
     {
@@ -45,10 +45,33 @@ public class LevelTwo extends World {
         c = new Cat(score, health);
 
         addObject(c,0, 300);
-
+        d = new Dog();
+        addObject(d, 200,400 );
 
     }
-
+    public void automatedDogMovement()
+    {
+        while(c.getHealth() != 0)
+        {
+        int z = (int)Math.random()*4;
+        if(z < 1  && ((d.getX() - 1 >= 0)))
+            d.setLocation(d.getX()-1, d.getY());
+        else if (z >= 1 && z < 2  && (d.getX() + 1 + d.getWidth() <= 800))
+            d.setLocation(d.getX() + 1, d.getY());
+         else if(z >= 2 && !d.isFalling() && d.getY() <= 200)
+            d.setLocation(d.getX(), d.getY() - 1);
+            //jumping = true;
+            //velY = -1;
+            d.setLocation(d.getX(), d.getY() + 1);
+         if(d.isTouching(Blaze.class))
+         {
+            d.setLocation(d.getX(), d.getY() - 1);
+            //jumping = true;
+            //velY = -1;
+         }
+        }
+         
+    }
     public void act()
     {
 
