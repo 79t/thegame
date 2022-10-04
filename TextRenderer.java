@@ -1,5 +1,5 @@
 import mayflower.*;
-import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Helper class to dynamically change the color of the text and remember it based on the current world
@@ -11,10 +11,9 @@ public class TextRenderer {
 
     public TextRenderer(World wo) {
         w = wo;
-        Map<?, ?> mappings = Map.of(
-                LevelOne.class, Color.BLACK,
-                LevelTwo.class, Color.WHITE
-        );
+        HashMap<Class<? extends World>, Color>  mappings = new HashMap<>(); 
+        mappings.put(LevelOne.class, Color.BLACK);
+        mappings.put(LevelTwo.class, Color.WHITE);
         color = (Color) mappings.get(w.getClass());
     }
 
