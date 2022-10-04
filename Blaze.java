@@ -13,8 +13,8 @@ public class Blaze extends Actor {
         right = new MayflowerImage(left);
         right.mirrorHorizontally();
 
-        left.scale(50, 100);
-        right.scale(50, 100);
+        left.scale(50, 85);
+        right.scale(50, 85);
         dir = "left";
         setImage(left);
     }
