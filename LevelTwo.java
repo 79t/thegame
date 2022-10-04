@@ -4,7 +4,7 @@ import mayflower.*;
 public class LevelTwo extends World {
 
     private String[][] tiles;
-    private String[][] tilesTwo;
+    // private String[][] tilesTwo;
     private Cat c;
 
     private TextRenderer t;

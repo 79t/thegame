@@ -37,7 +37,6 @@ public class MovableAnimatedActor extends AnimatedActor {
         int x = getX();
         int y = getY();
         int w = getWidth();
-        int h = getHeight();
 
         // movement commands, with bounds checking
         if (Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && (x + 1 + w <= 800)) {

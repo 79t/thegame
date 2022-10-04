@@ -1,6 +1,5 @@
 import mayflower.*;
 
-import java.util.logging.Level;
 
 public class Emerald extends Actor {
     public Emerald() {

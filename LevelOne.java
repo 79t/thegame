@@ -13,8 +13,6 @@ public class LevelOne extends World {
         Mayflower.showBounds(true);
         setBackground("assets/BG/overworldBG.png");
 
-        // TODO: Build Overworld
-        //      objects, hazards, etc
         Mayflower.showBounds(true);
         t.showText("welcome to the overworld!", 350, 250);
 
