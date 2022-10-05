@@ -41,7 +41,7 @@ public class LevelThree extends World {
             }
         }
         addObject(new Ladder(), 400, 200);
-        addObject(new Emerald(), 100, 400);
+        addObject(new EmeraldOld(), 100, 400);
         NetherPortal n = new NetherPortal();
         addObject(n, 700, 120);
         System.out.println(bc);
@@ -55,13 +55,7 @@ public class LevelThree extends World {
 
     public void act() {
 
-        if (Mayflower.isKeyPressed(Keyboard.KEY_W)) {
-            World win = new GameOverWin();
-            Mayflower.setWorld(win);
-        } else if (Mayflower.isKeyPressed(Keyboard.KEY_L)) {
-            World lose = new GameOverLose();
-            Mayflower.setWorld(lose);
-        }
+     
 
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);

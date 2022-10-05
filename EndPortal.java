@@ -14,8 +14,9 @@ public class EndPortal extends Actor
     }
     public void act() {
         if (isTouching(Cat.class)) {
+            Cat c = getOneIntersectingObject(Cat.class);
             mu.stop();
-            World newWorld = new GameOverWin(); 
+            World newWorld = new LevelThree(c.getScore(), c.getHealth()); 
             Mayflower.setWorld(newWorld);
         }
     }

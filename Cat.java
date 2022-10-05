@@ -84,7 +84,7 @@ public class Cat extends MovableAnimatedActor
         super.act();
         // die if health is too low
         if (health <= 0) {
-            World gameOver = new GameOverLose();
+            World gameOver = new GameOverLose(this.score);
             Mayflower.setWorld(gameOver);
         }
     }

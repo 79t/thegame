@@ -14,6 +14,8 @@ public class TextRenderer {
         HashMap<Class<? extends World>, Color>  mappings = new HashMap<>(); 
         mappings.put(LevelOne.class, Color.BLACK);
         mappings.put(LevelTwo.class, Color.WHITE);
+        mappings.put(LevelThree.class, Color.CYAN);
+        mappings.put(GameOverLose.class, Color.RED);
         color = (Color) mappings.get(w.getClass());
     }
 

@@ -29,7 +29,7 @@ public class LevelTwo extends World {
 
         // add climbing ladder
         // addObject(new Block(), 475, 375);
-        addObject(new Emerald(), 100, 400);
+        addObject(new EmeraldOld(), 100, 400);
         // addObject(new Block(), 400, 400);
         d = new Dog();
         

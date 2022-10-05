@@ -19,7 +19,7 @@ public class LevelOne extends World {
         NetherPortal n = new NetherPortal();
         addObject(n, 700, 380);
 
-        Emerald e = new Emerald();
+        EmeraldOld e = new EmeraldOld();
         addObject(e, 100, 400);
 
         // tiles array
