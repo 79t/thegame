@@ -1,0 +1,23 @@
+public void automatedDogMovement(Dog d)
+    {
+        while(c.getHealth() != 0)
+        {
+        int z = (int)(Math.random()*4);
+        if(z < 1  && ((d.getX() - 1 >= 0)))
+            d.setLocation(d.getX()-1, d.getY());
+        else if (z == 1  && (d.getX() + 1 + d.getWidth() <= 800))
+            d.setLocation(d.getX() + 1, d.getY());
+         else if(z >= 2 && !d.isFalling() && d.getY() <= 200)
+            d.setLocation(d.getX(), d.getY() - 1);
+            //jumping = true;
+            //velY = -1;
+            d.setLocation(d.getX(), d.getY() + 1);
+         if(d.isTouching(Blaze.class))
+         {
+            d.setLocation(d.getX(), d.getY() - 1);
+            //jumping = true;
+            //velY = -1;
+         }
+        }
+         
+    }
