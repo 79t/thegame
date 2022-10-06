@@ -59,5 +59,9 @@ public class GravityActor extends Actor {
         return !ret;
     }
 
+    public boolean isJumping() {
+        return velY < 0;
+    }
+
     
 }
