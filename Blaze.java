@@ -26,7 +26,6 @@ public class Blaze extends Actor {
 
         if (isTouching(Cat.class)) {
             Cat c = getOneIntersectingObject(Cat.class);
-            // TODO: fix this so the blaze moves back to ogx, ogy
             setLocation(ogx, ogy);
             Music m = TinySound.loadMusic("assets/music/oof.wav");
             m.play(false);

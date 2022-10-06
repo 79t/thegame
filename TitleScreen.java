@@ -14,9 +14,7 @@ public class TitleScreen extends World {
     }
     public void act() {
         if (Mayflower.isKeyPressed(Keyboard.KEY_P) ) {
-            // TODO: change this back to levelOne
-            //World mw = new LevelOne();
-            World mw = new LevelThree(0, 100);
+            World mw = new LevelOne();
             m.stop();
             Mayflower.setWorld(mw);
         }

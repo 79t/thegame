@@ -5,7 +5,7 @@ import mayflower.*;
  * A class that helps to animate a character, using a list of MayflowerImages, and a set framerate to shift images at
  */
 public class Animation {
-    private int framerate;
+    // private int framerate;
     private final MayflowerImage[] frames;
     private int currentFrame;
 
@@ -23,7 +23,7 @@ public class Animation {
 
     }
 
-    private int getFramerate() { return framerate; }
+    // private int getFramerate() { return framerate; }
 
     // Switch to the next frame, and if the new frame is more than the total # of frames, go back to frame 0
     // and return the new frame
