@@ -81,6 +81,8 @@ public class Cat extends MovableAnimatedActor
         setWalkLeftAnimation(walkLeft);
         setFallLeftAnimation(fallLeft);
         setFallRightAnimation(fallRight);
+        setJumpRightAnimation(jumpRight);
+        setJumpLeftAnimation(jumpLeft);
     }
     public void act()
     {
