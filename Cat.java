@@ -7,10 +7,6 @@ public class Cat extends MovableAnimatedActor
     private Animation fallRight;
     private Animation fallLeft;
     private Animation idleLeft;
-
-    private Animation jumpLeft;
-
-    private Animation jumpRight;
     private int score;
 
     public Cat()
@@ -27,10 +23,6 @@ public class Cat extends MovableAnimatedActor
         String[] fallImages = new String[8];
         for (int i = 0; i < fallImages.length; i++)
             fallImages[i] = String.format("assets/cat/Fall (%d).png", i + 1);
-
-        String[] jumpImages = new String[8];
-        for (int i = 0; i < fallImages.length; i++)
-            fallImages[i] = String.format("assets/cat/Jump (%d).png", i + 1);
 
 
         idleRight = new Animation(50000000, idleImages);
@@ -61,15 +53,6 @@ public class Cat extends MovableAnimatedActor
         fallLeft.mirrorHorizontally();
         fallLeft.scale(100, 87);
         fallLeft.setBounds(28, 5, 54, 80);
-
-        jumpRight = new Animation(50000000, fallImages);
-        jumpRight.scale(100, 87);
-        jumpRight.setBounds(18, 5, 54, 80);
-
-        jumpLeft = new Animation(50000000, fallImages);
-        jumpLeft.mirrorHorizontally();
-        jumpLeft.scale(100, 87);
-        jumpLeft.setBounds(18, 5, 54, 80);
 
 
         setIdleRightAnimation(idleRight);

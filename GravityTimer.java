@@ -1,4 +1,6 @@
 import mayflower.*;
+
+//a timer for falling
 public class GravityTimer extends Actor
 {
     public Timer g;
