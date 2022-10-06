@@ -106,7 +106,7 @@ public class Cat extends MovableAnimatedActor
 
     // remake actors, used when damage is taken
     public void respawn() {
-        setLocation(0, 250);
+        setLocation(0, 300);
     }
 
 
