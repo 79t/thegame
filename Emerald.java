@@ -5,10 +5,7 @@ public class Emerald extends Actor {
     private MayflowerImage left;
     private MayflowerImage right;
     private String dir;
-    private int ogx, ogy;
     public Emerald(int x, int y) {
-        ogx = x;
-        ogy = y;
         left = new MayflowerImage("assets/Object/emerald.png");
         right = new MayflowerImage(left);
         right.mirrorHorizontally();

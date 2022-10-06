@@ -13,10 +13,12 @@ public class Cat extends MovableAnimatedActor
     private Animation jumpLeft;
 
     private int score;
+    private int health;
 
-    public Cat()
+    public Cat(int startScore, int startHealth)
     {
-        score = 0;
+        score = startScore;
+        health = startHealth;
         String[] idleImages = new String[10];
         for (int i = 0; i < idleImages.length; i++)
             idleImages[i] = String.format("assets/cat/Idle (%d).png", i + 1);
@@ -83,17 +85,30 @@ public class Cat extends MovableAnimatedActor
     public void act()
     {
         super.act();
-        updateScore();
+
+        if (health <= 0) {
+            World gameOver = new GameOverLose(this.score);
+            Mayflower.setWorld(gameOver);
+        }
     }
 
     public int getScore() { return score; }
     public void incScore() { score++; }
 
-    private void updateScore() {
-        World w = getWorld();
-        w.removeText(10, 30);
-        w.showText("score: " + this.getScore(), 10, 30, Color.BLACK);
+
+    public int getHealth() { return health; }
+    public void decrHealth(int howMany) {
+        health -= howMany;
     }
+    public void incrHealth(int howMany) {
+        health += howMany;
+    }
+
+    // remake actors, used when damage is taken
+    public void respawn() {
+        setLocation(0, 250);
+    }
+
 
 
 

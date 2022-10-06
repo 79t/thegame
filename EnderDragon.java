@@ -5,7 +5,9 @@ public class EnderDragon extends Actor {
     private MayflowerImage left;
     private MayflowerImage right;
     private String dir;
+    private int health;
     public EnderDragon(int x, int y) {
+        health = 50;
         left = new MayflowerImage("assets/enderdragon.png");
         right = new MayflowerImage(left);
         right.mirrorHorizontally();
@@ -16,10 +18,18 @@ public class EnderDragon extends Actor {
         setImage(left);
     }
 
+    public int getHealth() { return health; }
+    public void decrHealth(int howMany) { health -= howMany; }
+
     public void act() {
         int x = getX();
         int y = getY();
         int h = getHeight();
+
+        if (health <= 0) {
+            World w = getWorld();
+            w.addObject(new DragonEgg(), 200, 0);
+        }
 
         if (isTouching(Cat.class)) {
             Cat c = getOneIntersectingObject(Cat.class);

@@ -6,7 +6,6 @@ public class LevelTwo extends World {
     private String[][] tiles;
     // private String[][] tilesTwo;
     private Cat c;
-    private Dog d;
     private TextRenderer t;
     public LevelTwo(int score, int health)
     {
@@ -31,7 +30,6 @@ public class LevelTwo extends World {
         // addObject(new Block(), 475, 375);
         addObject(new Emerald(100, 400), 100, 400);
         // addObject(new Block(), 400, 400);
-        d = new Dog();
         
         addObject(new Blaze(700, 400), 700, 400);
 

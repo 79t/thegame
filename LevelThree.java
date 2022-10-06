@@ -1,10 +1,14 @@
 import mayflower.*;
 
+/**
+ * @author suhas, tarun, alex
+ * this is the 3rd level of our game, it is the minecraft end
+ */
 public class LevelThree extends World {
 
     private String[][] tiles;
-    // private String[][] upperTiles;
     private Cat c;
+    private EnderDragon ed;
 
     private TextRenderer t;
 
@@ -16,7 +20,9 @@ public class LevelThree extends World {
         Mayflower.showBounds(true);
         t.showText("this is the FINAL WORLD", 350, 450);
 
-        addObject(new EnderDragon(100, 0), 100, 0);
+        ed = new EnderDragon(100, 0);
+
+        addObject(ed, 100, 0);
 
         tiles = new String[6][8];
         for (int i = 0; i < tiles[0].length; i++) {
@@ -26,7 +32,7 @@ public class LevelThree extends World {
                     addObject(new Lava(), i * 50 + 350, j * 100);
                 }
 
-                if (j == 1 && i != 4) {
+                if (j == 1 && (i % 2 == 1 || i == 0)) {
                     addObject(new Block(), i * 100, j * 100 + 50);
                 }
             }
@@ -39,17 +45,14 @@ public class LevelThree extends World {
 
         addObject(c, 0, 300);
 
+        addObject(new Sword(), 500, 50);
+
 
     }
 
     public void act() {
-
-     
-
         t.removeText(10, 30);
-        t.showText("score: " + c.getScore() + " health: " + c.getHealth(), 10, 30);
-
-
+        t.showText("score: " + c.getScore() + " health: " + c.getHealth() + " DRAGON HEALTH: " + ed.getHealth() , 10, 30);
     }
 
 
