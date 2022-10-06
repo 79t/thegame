@@ -16,6 +16,7 @@ public class MovableAnimatedActor extends AnimatedActor {
 
     private Animation jumpRight;
 
+    private Animation climb;
     // variables to keep track of which way its going, and whats happening right now
     private String currentAction;
     private String direction;
@@ -83,6 +84,7 @@ public class MovableAnimatedActor extends AnimatedActor {
         if (isFalling() && direction.equals("left") && direction != null) newAction = "fallLeft";
         if (isJumping() && direction.equals("right") && direction != null) newAction = "jumpRight";
         if (isJumping() && direction.equals("left") && direction != null) newAction = "jumpLeft";
+        if (isClimbing()) newAction = "climb";
 
 
         if (!newAction.equals(currentAction) && newAction != null) {
@@ -109,6 +111,9 @@ public class MovableAnimatedActor extends AnimatedActor {
                 currentAction = newAction;
             } else if (newAction.equals("jumpRight")) {
                 setAnimation(jumpRight);
+                currentAction = newAction;
+            } else if (newAction.equals("climb")) {
+                setAnimation(climb);
                 currentAction = newAction;
             }
         }
@@ -145,6 +150,8 @@ public class MovableAnimatedActor extends AnimatedActor {
     public void setJumpRightAnimation(Animation a) { jumpRight = a; }
 
     public void setJumpLeftAnimation(Animation a) { jumpLeft = a; }
+
+    public void setClimbAnimation(Animation a) { climb = a; }
 
 
 }
