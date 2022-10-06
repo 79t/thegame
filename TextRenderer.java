@@ -16,6 +16,7 @@ public class TextRenderer {
         mappings.put(LevelTwo.class, Color.WHITE);
         mappings.put(LevelThree.class, Color.CYAN);
         mappings.put(GameOverLose.class, Color.RED);
+        mappings.put(GameOverWin.class, Color.GREEN);
         color = (Color) mappings.get(w.getClass());
     }
 

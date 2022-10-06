@@ -86,7 +86,7 @@ public class Cat extends MovableAnimatedActor
     {
         super.act();
 
-        if (health <= 0) {
+        if (health <= 0 || getY() >= getWorld().getHeight()) {
             World gameOver = new GameOverLose(this.score);
             Mayflower.setWorld(gameOver);
         }

@@ -26,10 +26,6 @@ public class EnderDragon extends Actor {
         int y = getY();
         int h = getHeight();
 
-        if (health <= 0) {
-            World w = getWorld();
-            w.addObject(new DragonEgg(), 200, 0);
-        }
 
         if (isTouching(Cat.class)) {
             Cat c = getOneIntersectingObject(Cat.class);

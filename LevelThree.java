@@ -10,11 +10,14 @@ public class LevelThree extends World {
     private Cat c;
     private EnderDragon ed;
 
+    private boolean alreadyAdded = false;
+
     private TextRenderer t;
 
     public LevelThree(int score, int health) {
         t = new TextRenderer(this);
         Mayflower.showBounds(true);
+
         setBackground("assets/BG/end.jpeg");
 
         Mayflower.showBounds(true);
@@ -29,7 +32,7 @@ public class LevelThree extends World {
             for (int j = 0; j < tiles.length; j++) {
                 if (j == 5) {
                     addObject(new Block(), i * 45, j * 100);
-                    addObject(new Lava(), i * 50 + 350, j * 100);
+                    addObject(new Lava(), i * 50 + 515, j * 100);
                 }
 
                 if (j == 1 && (i % 2 == 1 || i == 0)) {
@@ -46,6 +49,7 @@ public class LevelThree extends World {
         addObject(c, 0, 300);
 
         addObject(new Sword(), 500, 50);
+        
 
 
     }
@@ -53,6 +57,15 @@ public class LevelThree extends World {
     public void act() {
         t.removeText(10, 30);
         t.showText("score: " + c.getScore() + " health: " + c.getHealth() + " DRAGON HEALTH: " + ed.getHealth() , 10, 30);
+
+        if (ed.getHealth() <= 0) {
+            removeObject(ed);
+            if (!alreadyAdded) {
+                addObject(new EndFountain(), 200, 400);
+                alreadyAdded = true;
+            }
+
+        }
     }
 
 
