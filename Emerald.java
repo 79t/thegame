@@ -47,7 +47,7 @@ public class Emerald extends Actor {
             }
         }
         if (dir.equals("right") && x <= 800 - h) {
-            setLocation(x + 1, y);
+            setLocation(x + 2, y);
             setImage(right);
 
             if (x >= 800 - h) {
@@ -57,7 +57,7 @@ public class Emerald extends Actor {
 
         if (dir.equals("left") && x >= 0) {
             setImage(left);
-            setLocation(x - 1, y);
+            setLocation(x - 2, y);
 
             if (x <= 0) {
                 dir = "right";

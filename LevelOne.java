@@ -19,8 +19,9 @@ public class LevelOne extends World {
         NetherPortal n = new NetherPortal();
         addObject(n, 700, 380);
 
-        Emerald e = new Emerald(100, 400);
-        addObject(e, 100, 400);
+        int emX = (int)(Math.random() * 5) + 1;
+        addObject(new Emerald(emX * 100, 350), emX * 100, 350);
+
 
         // tiles array
         tiles = new String[6][8];

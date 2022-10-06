@@ -28,7 +28,8 @@ public class LevelTwo extends World {
 
         // add climbing ladder
         // addObject(new Block(), 475, 375);
-        addObject(new Emerald(100, 400), 100, 400);
+        int emX = (int)(Math.random() * 5) + 1;
+        addObject(new Emerald(emX * 100, 400), emX * 100, 400);
         // addObject(new Block(), 400, 400);
         
         addObject(new Blaze(700, 400), 700, 400);
