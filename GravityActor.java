@@ -33,6 +33,7 @@ public class GravityActor extends Actor {
         // climbing
         if (isTouching(Ladder.class)) {
             velY = 0;
+            jumping = false;
             if (Mayflower.isKeyDown(Keyboard.KEY_SPACE) || Mayflower.isKeyDown(Keyboard.KEY_UP)) {
                 setLocation(getX(), getY() - 1);
             }
@@ -62,6 +63,8 @@ public class GravityActor extends Actor {
     public boolean isJumping() {
         return velY < 0;
     }
+
+    public boolean isClimbing() { return isTouching(Ladder.class); }
 
     
 }

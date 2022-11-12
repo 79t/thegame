@@ -12,6 +12,8 @@ public class Cat extends MovableAnimatedActor
 
     private Animation jumpLeft;
 
+    private Animation climb;
+
     private int score;
     private int health;
 
@@ -34,6 +36,10 @@ public class Cat extends MovableAnimatedActor
         String[] jumpImages = new String[8];
         for (int i = 0; i < jumpImages.length; i++)
             jumpImages[i] = String.format("assets/cat/Jump (%d).png", i + 1);
+
+        String[] climbImages = new String[3];
+        for (int i = 0; i < climbImages.length; i++)
+            climbImages[i] = String.format("assets/cat/Climb (%d).png", i + 1);
 
 
         idleRight = new Animation(50000000, idleImages);
@@ -74,6 +80,10 @@ public class Cat extends MovableAnimatedActor
         jumpLeft.scale(100, 87);
         jumpLeft.setBounds(18, 5, 54, 80);
 
+        climb = new Animation(80000000, climbImages);
+        climb.scale(100, 87);
+        climb.setBounds(18, 5, 54, 80);
+
 
         setIdleRightAnimation(idleRight);
         setIdleLeftAnimation(idleLeft);
@@ -83,6 +93,7 @@ public class Cat extends MovableAnimatedActor
         setFallRightAnimation(fallRight);
         setJumpRightAnimation(jumpRight);
         setJumpLeftAnimation(jumpLeft);
+        setClimbAnimation(climb);
     }
     public void act()
     {
